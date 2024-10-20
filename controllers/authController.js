@@ -44,6 +44,7 @@ exports.register = async (req, res) => {
   await connectToDatabase();
   const { email, password } = req.body;
 
+  
   try {
     const existingUser = await User.findOne({ email });
     if (existingUser)
