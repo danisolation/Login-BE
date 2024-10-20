@@ -37,13 +37,7 @@ const sendOTP = async (email, otp) => {
     text: `Your OTP code is ${otp}`,
   };
 
-  await transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log("Error: ", error);
-    } else {
-      console.log("Email sent: " + info.response);
-    }
-  });
+  await transporter.sendMail(mailOptions);
 };
 
 exports.register = async (req, res) => {
